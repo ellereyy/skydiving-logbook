@@ -2,6 +2,7 @@
 require('dotenv').config()
 const mongoose = require('mongoose');
 const mongodbUri = process.env.MONGODBURI;
+
 // Create an immediately invoked async function.
 // It will wait for Mongoose to connect to MongoDB Atlas
 (async function () {
@@ -11,5 +12,5 @@ const mongodbUri = process.env.MONGODBURI;
 
 module.exports = {
     Jump: require('./jump'),
-    Rig: require('./rig')
+    seedJumps: require('./seed')
 }

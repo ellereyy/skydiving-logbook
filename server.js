@@ -11,6 +11,10 @@ const connectLiveReload = require("connect-livereload");
 --------------------------------------------------------------- */
 const db = require('./models');
 
+/* Require the routes in the controllers folder
+--------------------------------------------------------------- */
+const jumpsCtrl = require('./controllers/jumps')
+
 
 /* Create the Express app
 --------------------------------------------------------------- */
@@ -45,6 +49,25 @@ app.use(connectLiveReload());
 app.get('/', function (req, res) {
     res.send('Skydiving Logbook')
 });
+
+// When a GET request is sent to `/seed`, the jumps collection is seeded
+app.get('/seed', function (req, res) {
+    // Remove any existing jumps
+    db.Jump.deleteMany({})
+        .then(removedJumps => {
+            console.log(`Removed ${removedJumps.deletedCount} jumps`)
+            // Seed the jumps collection with the seed data
+            db.Jump.insertMany(db.seedJumps)
+                .then(addedJumps => {
+                    console.log(`Added ${addedJumps.length} jumps in logbook`)
+                    res.json(addedJumps)
+                })
+        })
+});
+
+/* handle all routes beginning with /jumps 
+--------------------------------------------------------------- */
+app.use('/jumps', jumpsCtrl)
 
 
 /* Tell the app to listen on the specified port

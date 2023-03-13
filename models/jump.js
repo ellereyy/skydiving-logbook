@@ -7,7 +7,7 @@ const jumpSchema = new mongoose.Schema({
     aircraft: { type: String },
     equipment: { type: String, required: true },
     altitude: { type: Number, required: true },
-    freefallTime: { type: Number },
+    freeFallTime: { type: Number },
     description: { type: String },
     image: { type: String },
 });
