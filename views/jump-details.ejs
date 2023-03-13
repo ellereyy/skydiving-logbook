@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Paralog'}) %>
+    <!-- <link rel="stylesheet" href="/styles/jump-index.css"> -->
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <div>
+        <!-- <img src="<%= jump.photo %>"> -->
+        <h2> Jump Number: <%= jump.jumpNo %></h2>
+        <section>
+            <p>Date: <%= jump.date %></p>
+            <p>Place: <%= jump.place %></p>
+            <p>Aircraft: <%= jump.aircraft %></p>
+            <p>Equipment: <%= jump.equipment %></p>
+            <p>Altitude: <%= jump.altitude %> feet</p>
+            <p>Freefall Time: <%= jump.freeFallTime %></p>
+            <p>Jump Description: <%= jump.description %></p>
+        </section>
+    </div>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

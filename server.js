@@ -47,7 +47,7 @@ app.use(connectLiveReload());
 /* Mount routes
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {
-    res.send('Skydiving Logbook')
+    res.render('home')
 });
 
 // When a GET request is sent to `/seed`, the jumps collection is seeded
