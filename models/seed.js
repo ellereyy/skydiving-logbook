@@ -32,3 +32,15 @@ const jumps = [
 ]
 
 module.exports = jumps
+
+// const rigs = [
+//     {
+//         name: "Pirate",
+//         container: "Mirage G4",
+//         reserve: "Smart 135",
+//         main: "Spectre 135",
+//         aad: "Cypres 2",
+//     },
+// ]
+
+// module.exports = rigs
