@@ -15,7 +15,7 @@ const db = require('./models');
 /* Require the routes in the controllers folder
 --------------------------------------------------------------- */
 const jumpsCtrl = require('./controllers/jumps')
-// const rigsCtrl = require('./controllers/rigs')
+const rigsCtrl = require('./controllers/rigs')
 
 
 /* Create the Express app
@@ -78,7 +78,7 @@ app.get('/seed', function (req, res) {
 /* handle all routes beginning with /jumps 
 --------------------------------------------------------------- */
 app.use('/jumps', jumpsCtrl)
-// app.use('/rigs', rigsCtrl)
+app.use('/rigs', rigsCtrl)
 
 
 /* Tell the app to listen on the specified port

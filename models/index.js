@@ -13,6 +13,6 @@ const mongodbUri = process.env.MONGODBURI;
 module.exports = {
     Jump: require('./jump'),
     seedJumps: require('./seed'),
-    // Rig: require('./rig'),
-    // seedRigs: require('./seed')
+    Rig: require('./rig'),
+    seedRigs: require('./seed')
 }
