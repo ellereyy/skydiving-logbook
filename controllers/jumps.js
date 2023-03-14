@@ -37,7 +37,7 @@ router.get('/new', (req, res) => {
 // CREATE / POST / CREATE / new-jump.ejs / creates new jump and redirects to show page 
 router.post('/', (req, res) => {
     db.Jump.create(req.body)
-        .then(jump => res.json(jump))
+        .then(jump => res.redirect('/jumps/' + jump._id))
 })
 
 
@@ -55,7 +55,9 @@ router.get('/:id', function (req, res) {
 // EDIT / GET / READ / edit-jump.ejs / user can edit jump info 
 router.get('/:id/edit', (req, res) => {
     db.Jump.findById(req.params.id)
-        .then(jump => res.send('editing jump number ' + jump.jumpNo))
+        .then(jump => res.render('edit-jump', {
+            jump: jump
+        }))
 })
 
 // UPDATE / PUT / UPDATE / edits jump document using form data & redirects user to show page
@@ -65,13 +67,13 @@ router.put('/:id', (req, res) => {
         req.body,
         { new: true }
     )
-        .then (jump => res.json(jump))
+        .then(jump => res.redirect('/jumps/' + jump._id))
 })
 
 // DESTROY / DELETE / DELETE / deletes a jump document 
 router.delete('/:id', (req, res) => {
     db.Jump.findByIdAndRemove(req.params.id)
-        .then(jump => res.send('You deleted jump number ' + jump.jumpNo))
+        .then(() => res.redirect('/jumps'))
 })
 
 /* Export these routes so that they are accessible in `server.js`

@@ -13,3 +13,5 @@ const jumpSchema = new mongoose.Schema({
 });
 
 module.exports = mongoose.model('Jump', jumpSchema)
+
+// equipment: { type: String, required: true },

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Paralog'}) %>
+    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main>
+        <h2>Edit a Jump:</h2>
+        <!-- Jump number input -->
+        <label for="jumpNo">Jump Number:</label>
+        <input type="number" name="jumpNo" value="<%= jump.jumpNo %>" required>
+        <br>
+        <!-- jump date input -->
+        <label for="date">Date:</label>
+        <input type="date" name="date" value="<%= jump.date %>" required>
+        <br>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
