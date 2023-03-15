@@ -37,12 +37,18 @@
             <label for="description">Description:</label>
             <textarea id="description" name="description"></textarea>
           
-            <label for="image">Image:</label>
+            <label for="image">Image (URL):</label>
             <input type="text" id="image" name="image">
-          
+
+            <!-- <label for="image">Image (file):</label>
+            <input type="file" id="myFile" name="image"> -->
+
             <label for="rig">Rig:</label>
-            <input type="text" id="rig" name="rig">
-            <br>
+            <select id="rig" name="rig">
+                <% for (let rig of rigs) { %>
+                <option value="<%= rig._id %>"><%= rig.name %></option>
+                <% } %>
+            </select>
             
             <input type="submit" class="button" value="Submit">
           </form>

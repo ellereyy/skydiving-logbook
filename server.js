@@ -52,8 +52,6 @@ app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
 
 
-
-
 /* Mount routes
 --------------------------------------------------------------- */
 app.get('/', function (req, res) {

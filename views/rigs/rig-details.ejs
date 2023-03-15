@@ -24,6 +24,7 @@
         </section>
 
         <section class="edit-delete">
+            <a href="/rigs" class="button">View all rigs</a>
             <a href="/rigs/<%= rig._id %>/edit" class="button">Edit Rig</a>
             <form method="POST" action="/rigs/<%= rig._id %>?_method=DELETE">
                 <input class="button" type="submit" value="Delete Rig"/>

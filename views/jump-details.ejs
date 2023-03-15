@@ -11,19 +11,31 @@
 
     <main class="container">
         
-        <img src="<%= jump.photo %>">
-        <h2> Jump Number: <%= jump.jumpNo %></h2>
+        <section class="twelve columns"> 
+            <% if (jump.image) { %>
+            <img src="<%= jump.image %>" alt="jump photo">
+            <% } else { %>
+            <img src="/assets/default.jpg" alt="default jump photo">
+            <% } %>
+        </section> 
+
         <section>
+            <h2> Jump Number: <%= jump.jumpNo %></h2>
             <p>Date: <%= jump.date %></p>
             <p>Place: <%= jump.place %></p>
             <p>Aircraft: <%= jump.aircraft %></p>
-            <p>Equipment: <%= jump.equipment %></p>
+            <% if (jump.rig === true) { %>
+                <p>Equipment: <%= rig.name %></p>
+                <% } else { %>
+                <p>Equipment: <span class="missing">Gear not logged</span></p>
+                <% } %>
             <p>Altitude: <%= jump.altitude %> feet</p>
             <p>Freefall Time: <%= jump.freeFallTime %></p>
             <p>Jump Description: <%= jump.description %></p>
         </section>
 
         <section class="edit-delete">
+            <a href="/jumps" class="button">View all jumps</a>
             <a href="/jumps/<%= jump._id %>/edit" class="button">Edit Jump</a>
             <form method="POST" action="/jumps/<%= jump._id %>?_method=DELETE">
                 <input class="button" type="submit" value="Delete Jump"/>

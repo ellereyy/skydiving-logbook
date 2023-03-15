@@ -29,7 +29,10 @@ router.get('/', function (req, res) {
 
 // NEW / GET / READ / new-jump.ejs / display form for user to add new jump
 router.get('/new', (req, res) => {
-    res.render('new-jump')
+    db.Rig.find({})
+        .then(rigs => res.render('new-jump', {
+            rigs: rigs
+        }))
 })
 
 // CREATE / POST / CREATE / new-jump.ejs / creates new jump and redirects to show page 
@@ -40,14 +43,19 @@ router.post('/', (req, res) => {
 
 // SHOW / GET / READ / jump-details.ejs / display individual jump by id
 router.get('/:id', function (req, res) {
+    // find by the jump by ID using URL parameter
     db.Jump.findById(req.params.id)
         .then(jump => {
-            res.render('jump-details', {
-                jump: jump
-            })
+            // use the jump documents rig property to query rig 
+            db.Rig.findById(jump.rig)
+            // render the show page with jump and rig documents 
+                .then(rig => {res.render('jump-details', {
+                    jump: jump,
+                    rig: rig
+                })})
         })
-        .catch(() => res.send('404 Error: Page Not Found'))
 })
+
 
 // EDIT / GET / READ / edit-jump.ejs / user can edit jump info 
 router.get('/:id/edit', (req, res) => {

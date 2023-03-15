@@ -26,6 +26,15 @@ li {
     list-style-type: none;
 }
 
+.missing {
+    color: red;
+    font-style: italic;
+}
+
+img {
+    max-height: 250px;
+}
+
 /* body {
     display: grid;
     height: 100vh;
