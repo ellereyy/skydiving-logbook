@@ -27,19 +27,16 @@ router.get('/', function (req, res) {
             }))
 })
 
-
 // NEW / GET / READ / new-jump.ejs / display form for user to add new jump
 router.get('/new', (req, res) => {
     res.render('new-jump')
 })
-
 
 // CREATE / POST / CREATE / new-jump.ejs / creates new jump and redirects to show page 
 router.post('/', (req, res) => {
     db.Jump.create(req.body)
         .then(jump => res.redirect('/jumps/' + jump._id))
 })
-
 
 // SHOW / GET / READ / jump-details.ejs / display individual jump by id
 router.get('/:id', function (req, res) {

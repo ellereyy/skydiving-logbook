@@ -9,9 +9,9 @@
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <main>
+    <main class="container">
         <section>
-            <h1>Logged Jumps</h1>
+            <h2>Logged Jumps</h2>
             <ul>
                 <% for (let jump of jumps) { %>
                 <li>
@@ -20,7 +20,7 @@
                         <div class="card-body">
                           <h5 class="card-title"> Jump: <%= jump.jumpNo %> </h5>
                           <h6 class="card-subtitle mb-2 text-muted"> <%= jump.date %> | <%= jump.place %> </h6>
-                          <a href="/jumps/<%= jump._id %>">View Details</a>
+                          <a href="/jumps/<%= jump._id %>" class="button">View Details</a>
                         </div>
                     </div>
                 </li>

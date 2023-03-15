@@ -1,4 +1,32 @@
+header {
+    background-color: orange;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+footer {
+    background-color: orange;
+    color: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
 body {
+    height: 100vh;
+}
+
+.card {
+    background-color: orange;
+    padding: 10px 30px;
+}
+
+li {
+    list-style-type: none;
+}
+
+/* body {
     display: grid;
     height: 100vh;
     grid-template-rows: 50px 1fr 50px;
@@ -12,13 +40,7 @@ a {
     color: white;
 }
 
-header {
-    background-color: seagreen;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
+
 
 #log-btn {
     background-color: white;
@@ -27,19 +49,4 @@ header {
     border-radius: 5px;
     margin-left: 10px
 }
-
-footer {
-    background-color: seagreen;
-    color: white;
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-}
-
-.card {
-    background-color: seagreen;
-}
-
-li {
-    list-style-type: none;
-}
+ */

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'Paralog'}) %>
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <div>
+        <img src="<%= rig.photo %>">
+        <h2> Name: <%= rig.name %></h2>
+        <section>
+            <p>Container: <%= rig.container %></p>
+            <p>Main: <%= rig.main %></p>
+            <p>Reserve: <%= rig.reserve %></p>
+            <p>AAD: <%= rig.aad %></p>
+            <p>Reserve Repack Due: <%= rig.reserveRepackDue %> </p>
+            <p>AAD Service Required: <%= rig.aadServiceDue %></p>
+        </section>
+    </div>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>

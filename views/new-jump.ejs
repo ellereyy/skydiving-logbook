@@ -11,14 +11,18 @@
 
     <main>
         <h2>Log a Jump:</h2>
-        <!-- Jump number input -->
-        <label for="jumpNo">Jump Number:</label>
-        <input type="number" name="jumpNo" required>
-        <br>
-        <!-- jump date input -->
-        <label for="date">Date:</label>
-        <input type="date" name="date" required>
-        <br>
+
+        <form method="POST" action="/jumps">
+            <!-- Jump number input -->
+            <label for="jumpNo">Jump Number:</label>
+            <input type="number" name="jumpNo" required>
+            <br>
+            <!-- jump date input -->
+            <label for="date">Date:</label>
+            <input type="date" name="date" required>
+            <br>
+        </form>
+
     </main>
 
     <%- include('./partials/footer.ejs') %>

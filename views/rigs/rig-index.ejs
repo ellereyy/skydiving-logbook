@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('../partials/head.ejs', {title: 'Paralog'}) %>
+    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+</head>
+
+<body>
+    <%- include('../partials/nav.ejs') %>
+
+    <main class="container">
+        <section>
+            <h2>Gear Inventory</h2>
+            <a href="/rigs/new" class="button">Add Gear</a>
+            <ul>
+                <% for (let rig of rigs) { %>
+                <li>
+                    <div class="card" style="width: 18rem;">
+                        <!-- <img src="..." class="card-img-top" alt="..."> -->
+                        <div class="card-body">
+                          <h5 class="card-title"> Rig: <%= rig.name %> </h5>
+                          <h6 class="card-subtitle mb-2 text-muted"> <%= rig.container %> | <%= rig.main %> </h6>
+                          <a href="/rigs/<%= rig._id %>" class="button">View Details</a>
+                        </div>
+                    </div>
+                </li>
+                <% } %>
+            </ul>
+        </section>
+    </main>
+
+    <%- include('../partials/footer.ejs') %>
+</body>
+
+</html>
