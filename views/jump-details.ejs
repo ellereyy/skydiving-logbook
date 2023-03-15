@@ -9,7 +9,8 @@
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <div>
+    <main class="container">
+        
         <img src="<%= jump.photo %>">
         <h2> Jump Number: <%= jump.jumpNo %></h2>
         <section>
@@ -21,7 +22,15 @@
             <p>Freefall Time: <%= jump.freeFallTime %></p>
             <p>Jump Description: <%= jump.description %></p>
         </section>
-    </div>
+
+        <section class="edit-delete">
+            <a href="/jumps/<%= jump._id %>/edit" class="button">Edit Jump</a>
+            <form method="POST" action="/jumps/<%= jump._id %>?_method=DELETE">
+                <input class="button" type="submit" value="Delete Jump"/>
+            </form>
+        </section>
+
+    </main>
 
     <%- include('./partials/footer.ejs') %>
 </body>

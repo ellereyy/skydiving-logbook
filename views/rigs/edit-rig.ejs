@@ -9,7 +9,7 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <main>
+    <main class="container">
         <h2>Edit a Rig:</h2>
         <form method="POST" action="/rigs/<%= rig._id %>?_method=PUT">
             <label for="name">Name:</label>

@@ -8,18 +8,29 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <div>
-        <img src="<%= rig.photo %>">
-        <h2> Name: <%= rig.name %></h2>
+    <main class="container">
+
         <section>
-            <p>Container: <%= rig.container %></p>
-            <p>Main: <%= rig.main %></p>
-            <p>Reserve: <%= rig.reserve %></p>
-            <p>AAD: <%= rig.aad %></p>
-            <p>Reserve Repack Due: <%= rig.reserveRepackDue %> </p>
-            <p>AAD Service Required: <%= rig.aadServiceDue %></p>
+            <img src="<%= rig.photo %>">
+            <h2> Name: <%= rig.name %></h2>
+            <section>
+                <p>Container: <%= rig.container %></p>
+                <p>Main: <%= rig.main %></p>
+                <p>Reserve: <%= rig.reserve %></p>
+                <p>AAD: <%= rig.aad %></p>
+                <p>Reserve Repack Due: <%= rig.reserveRepackDue %> </p>
+                <p>AAD Service Required: <%= rig.aadServiceDue %></p>
+            </section>
         </section>
-    </div>
+
+        <section class="edit-delete">
+            <a href="/rigs/<%= rig._id %>/edit" class="button">Edit Rig</a>
+            <form method="POST" action="/rigs/<%= rig._id %>?_method=DELETE">
+                <input class="button" type="submit" value="Delete Rig"/>
+            </form>
+        </section>
+
+    </main>
 
     <%- include('../partials/footer.ejs') %>
 </body>

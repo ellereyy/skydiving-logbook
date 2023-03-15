@@ -14,6 +14,7 @@ const router = express.Router()
 /* Require the db connection, and models
 --------------------------------------------------------------- */
 const db = require('../models')
+const rig = require('../models/rig')
 
 
 /* Routes
@@ -36,7 +37,7 @@ router.get('/new', (req, res) => {
 // CREATE / POST / CREATE / new-rig.ejs / creates new rig and redirects to show page 
 router.post('/', (req, res) => {
     db.Rig.create(req.body)
-        .then(rig => res.json(rig))
+        .then(rig => res.redirect('/rigs/' + rig._id))
 })
 
 // SHOW / GET / READ / rig-details.ejs / display individual rig by id
