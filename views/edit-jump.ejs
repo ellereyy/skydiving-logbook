@@ -9,16 +9,44 @@
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <main>
+    <main class="container">
         <h2>Edit a Jump:</h2>
-        <!-- Jump number input -->
-        <label for="jumpNo">Jump Number:</label>
-        <input type="number" name="jumpNo" value="<%= jump.jumpNo %>" required>
-        <br>
-        <!-- jump date input -->
-        <label for="date">Date:</label>
-        <input type="date" name="date" value="<%= jump.date %>" required>
-        <br>
+
+        <form method="post" action="/jumps/<%= jump._id %>?_method=PUT">
+            <label for="jumpNo">Jump Number:</label>
+            <input type="number" id="jumpNo" name="jumpNo" value="<%= jump.jumpNo %>" required>
+          
+            <label for="date">Date:</label>
+            <input type="date" id="date" name="date" value="<%= jump.date.toISOString().substr(0,10) %>" required>
+          
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" value="<%= jump.place %>" required>
+          
+            <label for="aircraft">Aircraft:</label>
+            <input type="text" id="aircraft" name="aircraft" value="<%= jump.aircraft %>" required>
+          
+            <label for="equipment">Equipment:</label>
+            <input type="text" id="equipment" name="equipment" value="<%= jump.equipment %>" required>
+          
+            <label for="altitude">Altitude:</label>
+            <input type="number" id="altitude" name="altitude" value="<%= jump.altitude %>" required>
+          
+            <label for="freeFallTime">Free Fall Time:</label>
+            <input type="number" id="freeFallTime" name="freeFallTime" value="<%= jump.freeFallTime %>">
+          
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"><%= jump.description %></textarea>
+          
+            <label for="image">Image:</label>
+            <input type="text" id="image" name="image" value="<%= jump.image %>">
+          
+            <label for="rig">Rig:</label>
+            <input type="text" id="rig" name="rig" value="<%= jump.rig %>">
+            <br>
+          
+            <input type="submit" class="button" value="Submit">
+          </form>
+          
     </main>
 
     <%- include('./partials/footer.ejs') %>

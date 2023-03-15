@@ -9,19 +9,39 @@
 <body>
     <%- include('../partials/nav.ejs') %>
 
-    <main>
+    <main class="container">
+
         <h2>Add some gear:</h2>
 
-        <form action="/rigs" method="POST">
-            <!-- Jump number input -->
-            <label for="name">Name your Rig:</label>
-            <input type="string" name="name" required>
+        <form method="POST" action="/rigs">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+          
+            <label for="container">Container:</label>
+            <input type="text" id="container" name="container" required>
+          
+            <label for="reserve">Reserve:</label>
+            <input type="text" id="reserve" name="reserve" required>
+          
+            <label for="main">Main:</label>
+            <input type="text" id="main" name="main" required>
+          
+            <label for="aad">AAD:</label>
+            <input type="text" id="aad" name="aad" required>
+          
+            <label for="image">Image:</label>
+            <input type="text" id="image" name="image">
+          
+            <label for="aadServiceDue">AAD Service Due:</label>
+            <input type="date" id="aadServiceDue" name="aadServiceDue">
+          
+            <label for="reserveRepackDue">Reserve Repack Due:</label>
+            <input type="date" id="reserveRepackDue" name="reserveRepackDue">
             <br>
-            <!-- jump date input -->
-            <label for="reserve">Reserve Model/Size:</label>
-            <input type="string" name="reserve" required>
-            <br>
-        </form>
+
+            <input type="submit" class="button" value="Submit">
+          </form>
+          
     </main>
 
     <%- include('../partials/footer.ejs') %>

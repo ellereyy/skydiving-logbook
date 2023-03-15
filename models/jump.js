@@ -6,7 +6,7 @@ const jumpSchema = new mongoose.Schema({
     jumpNo: { type: Number, required: true },
     date: { type: Date, required: true },
     place: { type: String, required: true },
-    aircraft: { type: String },
+    aircraft: { type: String, required: true },
     equipment: { type: String, required: true },
     altitude: { type: Number, required: true },
     freeFallTime: { type: Number },

@@ -11,7 +11,35 @@
 
     <main>
         <h2>Edit a Rig:</h2>
-            <!-- Jump number input -->
+        <form method="POST" action="/rigs/<%= rig._id %>?_method=PUT">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" value="<%= rig.name %>" required>
+          
+            <label for="container">Container:</label>
+            <input type="text" id="container" name="container" value="<%= rig.container %>" required>
+          
+            <label for="reserve">Reserve:</label>
+            <input type="text" id="reserve" name="reserve" value="<%= rig.reserve %>" required>
+          
+            <label for="main">Main:</label>
+            <input type="text" id="main" name="main" value="<%= rig.main %>" required>
+          
+            <label for="aad">AAD:</label>
+            <input type="text" id="aad" name="aad" value="<%= rig.aad %>" required>
+          
+            <label for="image">Image:</label>
+            <input type="text" id="image" name="image" value="<%= rig.image %>">
+          
+            <label for="aadServiceDue">AAD Service Due:</label>
+            <input type="date" id="aadServiceDue" name="aadServiceDue" value="<%= rig.aadServiceDue ? rig.aadServiceDue.toISOString().substr(0,10) : '' %>">
+          
+            <label for="reserveRepackDue">Reserve Repack Due:</label>
+            <input type="date" id="reserveRepackDue" name="reserveRepackDue" value="<%= rig.reserveRepackDue ? rig.reserveRepackDue.toISOString().substr(0,10) : '' %>">
+            <br>
+
+            <input type="submit" class="button" value="Submit">
+          </form>
+          
     </main>
 
     <%- include('../partials/footer.ejs') %>

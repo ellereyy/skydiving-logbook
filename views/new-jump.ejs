@@ -9,19 +9,43 @@
 <body>
     <%- include('./partials/nav.ejs') %>
 
-    <main>
+    <main class="container">
         <h2>Log a Jump:</h2>
 
-        <form method="POST" action="/jumps">
-            <!-- Jump number input -->
+        <form method="post" action="/jumps">
             <label for="jumpNo">Jump Number:</label>
-            <input type="number" name="jumpNo" required>
-            <br>
-            <!-- jump date input -->
+            <input type="number" id="jumpNo" name="jumpNo" min="0" required>
+          
             <label for="date">Date:</label>
-            <input type="date" name="date" required>
+            <input type="date" id="date" name="date" required>
+          
+            <label for="place">Place:</label>
+            <input type="text" id="place" name="place" required>
+          
+            <label for="aircraft">Aircraft:</label>
+            <input type="text" id="aircraft" name="aircraft" required>
+          
+            <label for="equipment">Equipment:</label>
+            <input type="text" id="equipment" name="equipment" required>
+          
+            <label for="altitude">Altitude:</label>
+            <input type="number" id="altitude" name="altitude" min="2500" value="13500" required>
+          
+            <label for="freeFallTime">Free Fall Time:</label>
+            <input type="number" id="freeFallTime" name="freeFallTime">
+          
+            <label for="description">Description:</label>
+            <textarea id="description" name="description"></textarea>
+          
+            <label for="image">Image:</label>
+            <input type="text" id="image" name="image">
+          
+            <label for="rig">Rig:</label>
+            <input type="text" id="rig" name="rig">
             <br>
-        </form>
+            
+            <input type="submit" class="button" value="Submit">
+          </form>
 
     </main>
 
