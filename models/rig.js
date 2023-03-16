@@ -9,6 +9,7 @@ const rigSchema = new mongoose.Schema({
   image: { type: String },
   aadServiceDue: { type: Date },
   reserveRepackDue: { type: Date },
+  currentRig: { type: Boolean, default: false }
 });
 
 module.exports = mongoose.model('Rig', rigSchema)

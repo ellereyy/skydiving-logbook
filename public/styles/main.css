@@ -1,20 +1,24 @@
+body {
+    height: 100vh;
+    display: grid;
+    grid-template-rows: 8rem 1fr 7rem;
+}
+
 header {
     background-color: orange;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
+    padding: 0 10px;
 }
 
 footer {
     background-color: orange;
     color: white;
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: center;
-}
-
-body {
-    height: 100vh;
+    padding: 0 10px;
 }
 
 .card {
@@ -34,6 +38,29 @@ li {
 img {
     max-height: 250px;
 }
+
+.box {
+    background-color: #33C3F0;
+    padding: 2rem;
+    border-radius: 20px;
+    margin-top: 10px;
+}
+
+.title {
+    margin-top: 8rem;
+}
+
+.about {
+    margin-top: 8rem;
+}
+
+.docs-header {
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    letter-spacing: .2rem;
+    font-weight: 600;
+}
+
 
 /* body {
     display: grid;

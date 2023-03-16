@@ -21,13 +21,13 @@
 
         <section>
             <h2> Jump Number: <%= jump.jumpNo %></h2>
-            <p>Date: <%= jump.date %></p>
+            <p>Date: <%= jump.date.toLocaleDateString() %></p>
             <p>Place: <%= jump.place %></p>
             <p>Aircraft: <%= jump.aircraft %></p>
-            <% if (jump.rig === true) { %>
-                <p>Equipment: <%= rig.name %></p>
+            <% if (jump.rig) { %>
+                <p>Equipment: <%= rig.name %> </p>
                 <% } else { %>
-                <p>Equipment: <span class="missing">Gear not logged</span></p>
+                <p>Equipment: <span class="missing">not logged</span></p>
                 <% } %>
             <p>Altitude: <%= jump.altitude %> feet</p>
             <p>Freefall Time: <%= jump.freeFallTime %></p>

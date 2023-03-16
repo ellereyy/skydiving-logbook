@@ -12,14 +12,16 @@
     <main class="container">
         <section>
             <h2>Logged Jumps</h2>
+            <a href="/jumps/new" class="button">Log a Jump</a>
             <ul>
+                <% jumps.sort((a, b) => a.jumpNo - b.jumpNo); %>
                 <% for (let jump of jumps) { %>
                 <li>
-                    <div class="card" style="width: 18rem;">
+                    <div class="card">
                         <!-- <img src="..." class="card-img-top" alt="..."> -->
                         <div class="card-body">
                           <h5 class="card-title"> Jump: <%= jump.jumpNo %> </h5>
-                          <h6 class="card-subtitle mb-2 text-muted"> <%= jump.date %> | <%= jump.place %> </h6>
+                          <h6 class="card-subtitle mb-2 text-muted"> <%= jump.date.toLocaleDateString() %> | <%= jump.place %> </h6>
                           <a href="/jumps/<%= jump._id %>" class="button">View Details</a>
                         </div>
                     </div>

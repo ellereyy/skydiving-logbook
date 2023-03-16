@@ -73,6 +73,13 @@ app.get('/seed', function (req, res) {
         })
 });
 
+// Render the about page
+app.get('/about', function (req, res) {
+    res.render('about')
+});
+
+//Render the steps page
+
 /* handle all routes beginning with /jumps 
 --------------------------------------------------------------- */
 app.use('/jumps', jumpsCtrl)
