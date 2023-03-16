@@ -19,8 +19,13 @@
                 <li>
                     <div class="card row">
                         <div class="four columns img-box">
-                            <img src="<%= jump.image %>" alt="jump photo" class="index-img">
+                            <% if (jump.image) { %>
+                                <img src="<%= jump.image %>" alt="jump photo" class="index-img">
+                            <% } else { %>
+                                <img src="/assets/vsa.jpeg" alt="default photo" class="index-img no-img">
+                            <% } %>
                         </div>
+                        
                         <div class="eight columns">
                             <h5 class="card-header"> JUMP: <%= jump.jumpNo %> </h5>
                             <h6 class="docs-header"> <%= jump.date.toLocaleDateString() %> | <%= jump.place %> </h6>

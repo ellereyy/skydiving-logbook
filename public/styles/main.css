@@ -85,6 +85,10 @@ img {
     overflow: hidden;
 }
 
+.no-img {
+    filter: grayscale(100%)
+}
+
 /* nav styles */
 
 .dropdown-btn {
