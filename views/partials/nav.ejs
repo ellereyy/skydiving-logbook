@@ -1,10 +1,21 @@
 <header>
-    <h1> <a href="/" style="text-decoration: none; color: black;"> Paralog</a></h1>
-    <button class="dropdown-btn">Menu</button>
-    <nav class="dropdown-menu">
+    <h1> <a href="/" id="logo"> Paralog</a></h1>
+    
+    <nav class="nav-display">
         <a href="/" class="button">Home</a>
         <a href="/jumps" class="button">Logbook</a>
         <a href="/rigs" class="button">Gear</a>
-        <a href="/jumps/new" id="log-btn" class="button button-primary">Log a Jump</a>
+        <a href="/jumps/new" class="button button-primary">Log a Jump</a>
     </nav>
+
+    <nav class="dropdown">
+        <button class="dropbtn button-primary">Menu</button>
+        <div class="dropdown-content">
+            <a href="/">Home</a>
+            <a href="/jumps">Logbook</a>
+            <a href="/rigs">Gear</a>
+            <a href="/jumps/new" id="log-btn">Log a Jump</a>    
+        </div>
+    </nav>
+    
 </header>

@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('../partials/head.ejs', {title: 'Paralog'}) %>
+    <%- include('../partials/head.ejs', {title: `${rig.name} | Paralog`}) %>
 </head>
 
 <body>
@@ -15,7 +15,7 @@
                 <% if (rig.image) { %>
                 <img src="<%= rig.image %>" alt="jump photo">
                 <% } else { %>
-                <img src="https://media.istockphoto.com/id/673781000/photo/skydiving-rig.jpg?s=612x612&w=0&k=20&c=vnqa7o6cb2mIuX-FIX5CzPONwkNUM04i46SFqbJ1l88=" alt="default rig photo">
+                <img src="https://media.istockphoto.com/id/673781000/photo/skydiving-rig.jpg?s=612x612&w=0&k=20&c=vnqa7o6cb2mIuX-FIX5CzPONwkNUM04i46SFqbJ1l88=" alt="default rig photo" class="no-img">
                 <% } %>
             </section> 
 

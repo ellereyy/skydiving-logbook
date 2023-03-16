@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <%- include('./partials/head.ejs', {title: 'Paralog'}) %>
+    <%- include('./partials/head.ejs', {title: `Jump ${jump.jumpNo} | Paralog`}) %>
     <!-- <link rel="stylesheet" href="/styles/jump-index.css"> -->
 </head>
 
@@ -16,7 +16,7 @@
                 <% if (jump.image) { %>
                 <img src="<%= jump.image %>" alt="jump photo">
                 <% } else { %>
-                <img src="/assets/default.jpg" alt="default jump photo">
+                <img src="/assets/vsa.jpeg" alt="default jump photo" class="no-img">
                 <% } %>
             </section> 
 
