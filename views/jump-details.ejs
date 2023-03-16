@@ -11,36 +11,41 @@
 
     <main class="container">
         
-        <section class="twelve columns"> 
-            <% if (jump.image) { %>
-            <img src="<%= jump.image %>" alt="jump photo">
-            <% } else { %>
-            <img src="/assets/default.jpg" alt="default jump photo">
-            <% } %>
-        </section> 
-
-        <section>
-            <h2> Jump Number: <%= jump.jumpNo %></h2>
-            <p>Date: <%= jump.date.toLocaleDateString() %></p>
-            <p>Place: <%= jump.place %></p>
-            <p>Aircraft: <%= jump.aircraft %></p>
-            <% if (jump.rig) { %>
-                <p>Equipment: <%= rig.name %> </p>
+        <section class="card about">
+            <section> 
+                <% if (jump.image) { %>
+                <img src="<%= jump.image %>" alt="jump photo">
                 <% } else { %>
-                <p>Equipment: <span class="missing">not logged</span></p>
+                <img src="/assets/default.jpg" alt="default jump photo">
                 <% } %>
-            <p>Altitude: <%= jump.altitude %> feet</p>
-            <p>Freefall Time: <%= jump.freeFallTime %></p>
-            <p>Jump Description: <%= jump.description %></p>
-        </section>
+            </section> 
 
-        <section class="edit-delete">
-            <a href="/jumps" class="button">View all jumps</a>
-            <a href="/jumps/<%= jump._id %>/edit" class="button">Edit Jump</a>
-            <form method="POST" action="/jumps/<%= jump._id %>?_method=DELETE">
-                <input class="button" type="submit" value="Delete Jump"/>
-            </form>
+            <section>
+                <h5 class="card-header"> Jump Number: <%= jump.jumpNo %></h5>
+                <p>Date: <%= jump.date.toLocaleDateString() %></p>
+                <p>Place: <%= jump.place %></p>
+                <p>Aircraft: <%= jump.aircraft %></p>
+                <% if (jump.rig) { %>
+                    <p>Equipment: <%= rig.name %> </p>
+                    <% } else { %>
+                    <p>Equipment: <span class="missing">not logged</span></p>
+                    <% } %>
+                <p>Altitude: <%= jump.altitude %> feet</p>
+                <p>Freefall Time: <%= jump.freeFallTime %></p>
+                <p>Jump Description: <%= jump.description %></p>
+            </section>
+
+            <section class="edit-delete">
+                <a href="/jumps/<%= jump._id %>/edit" class="button">Edit Jump</a>
+                <form method="POST" action="/jumps/<%= jump._id %>?_method=DELETE">
+                    <input class="button" type="submit" value="Delete Jump"/>
+                </form>
+            </section>
         </section>
+        <br>
+
+        <a href="/jumps" class="button">View all jumps</a>
+
 
     </main>
 

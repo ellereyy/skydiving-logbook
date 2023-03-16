@@ -10,7 +10,7 @@
     <%- include('../partials/nav.ejs') %>
 
     <main class="container">
-        <section>
+        <section class="about">
             <h2>Gear Inventory</h2>
             <a href="/rigs/new" class="button">Add Gear</a>
             <ul>
@@ -18,9 +18,9 @@
                 <li>
                     <div class="card">
                         <!-- <img src="..." class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                          <h5 class="card-title"> Rig: <%= rig.name %> </h5>
-                          <h6 class="card-subtitle mb-2 text-muted"> <%= rig.container %> | <%= rig.main %> </h6>
+                        <div class="card">
+                          <h5 class="card-header">name: <%= rig.name %> </h5>
+                          <h6 class="docs-header"> <%= rig.container %> | <%= rig.main %> </h6>
                           <a href="/rigs/<%= rig._id %>" class="button">View Details</a>
                         </div>
                     </div>

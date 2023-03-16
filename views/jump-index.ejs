@@ -10,7 +10,7 @@
     <%- include('./partials/nav.ejs') %>
 
     <main class="container">
-        <section>
+        <section class="about">
             <h2>Logged Jumps</h2>
             <a href="/jumps/new" class="button">Log a Jump</a>
             <ul>
@@ -18,12 +18,9 @@
                 <% for (let jump of jumps) { %>
                 <li>
                     <div class="card">
-                        <!-- <img src="..." class="card-img-top" alt="..."> -->
-                        <div class="card-body">
-                          <h5 class="card-title"> Jump: <%= jump.jumpNo %> </h5>
-                          <h6 class="card-subtitle mb-2 text-muted"> <%= jump.date.toLocaleDateString() %> | <%= jump.place %> </h6>
-                          <a href="/jumps/<%= jump._id %>" class="button">View Details</a>
-                        </div>
+                        <h5 class="card-header"> JUMP: <%= jump.jumpNo %> </h5>
+                        <h6 class="docs-header"> <%= jump.date.toLocaleDateString() %> | <%= jump.place %> </h6>
+                        <a href="/jumps/<%= jump._id %>" class="button">View Details</a>
                     </div>
                 </li>
                 <% } %>

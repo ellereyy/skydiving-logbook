@@ -78,6 +78,10 @@ app.get('/about', function (req, res) {
     res.render('about')
 });
 
+app.get('/steps', function (req, res) {
+    res.render('steps')
+});
+
 //Render the steps page
 
 /* handle all routes beginning with /jumps 

@@ -9,34 +9,48 @@
     <%- include('../partials/nav.ejs') %>
 
     <main class="container">
-        
-        <section class="twelve columns"> 
-            <% if (rig.image) { %>
-            <img src="<%= rig.image %>" alt="jump photo">
-            <% } else { %>
-            <img src="https://media.istockphoto.com/id/673781000/photo/skydiving-rig.jpg?s=612x612&w=0&k=20&c=vnqa7o6cb2mIuX-FIX5CzPONwkNUM04i46SFqbJ1l88=" alt="default rig photo">
-            <% } %>
-        </section> 
 
-        <section>
-            <h2> Name: <%= rig.name %></h2>
+        <section class="card about">
+            <section> 
+                <% if (rig.image) { %>
+                <img src="<%= rig.image %>" alt="jump photo">
+                <% } else { %>
+                <img src="https://media.istockphoto.com/id/673781000/photo/skydiving-rig.jpg?s=612x612&w=0&k=20&c=vnqa7o6cb2mIuX-FIX5CzPONwkNUM04i46SFqbJ1l88=" alt="default rig photo">
+                <% } %>
+            </section> 
+
             <section>
-                <p>Container: <%= rig.container %></p>
-                <p>Main: <%= rig.main %></p>
-                <p>Reserve: <%= rig.reserve %></p>
-                <p>AAD: <%= rig.aad %></p>
-                <p>Reserve Repack Due: <%= rig.reserveRepackDue %> </p>
-                <p>AAD Service Required: <%= rig.aadServiceDue %></p>
+                <h5 class="card-header"> Name: <%= rig.name %></h5>
+                <section>
+                    <p>Container: <%= rig.container %></p>
+                    <p>Main: <%= rig.main %></p>
+                    <p>Reserve: <%= rig.reserve %></p>
+                    <p>AAD: <%= rig.aad %></p>
+                    <% if (rig.reserveRepackDue) { %>
+                        <p>Reserve Repack Due: <%= rig.reserveRepackDue %> </p>
+                        <% } else { %>
+                        <p>Reserve Repack Due: <span class="missing">data not available</span></p>
+                        <% } %>
+                    <% if (rig.aadServiceDue) { %>
+                        <p>AAD Service Due: <%= rig.aadServiceDue %> </p>
+                        <% } else { %>
+                        <p>AAD Service Due: <span class="missing">data not available</span></p>
+                        <% } %>
+                </section>
             </section>
-        </section>
 
-        <section class="edit-delete">
-            <a href="/rigs" class="button">View all rigs</a>
-            <a href="/rigs/<%= rig._id %>/edit" class="button">Edit Rig</a>
-            <form method="POST" action="/rigs/<%= rig._id %>?_method=DELETE">
-                <input class="button" type="submit" value="Delete Rig"/>
-            </form>
+            <section class="edit-delete">
+                <a href="/rigs/<%= rig._id %>/edit" class="button">Edit Rig</a>
+                <form method="POST" action="/rigs/<%= rig._id %>?_method=DELETE">
+                    <input class="button" type="submit" value="Delete Rig"/>
+                </form>
+            </section>
+
         </section>
+        <br>
+        
+        <a href="/rigs" class="button">View all rigs</a>
+
 
     </main>
 

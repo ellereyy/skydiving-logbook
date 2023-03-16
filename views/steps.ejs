@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: 'Paralog'}) %>
+    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main class="container about">
+
+        <div>
+            <h2>How to Get Started</h2>
+            <p>Skydiving is a thrilling sport, but it requires some serious organization. Here's a step-by-step guide to help make logging jumps a little bit easier.</p>
+            <h5>Step 1: Log Your Gear</h5>
+            <p>Don't forget to add your gear details to your rig's log! After all, you can't jump without a parachute (twice). Navigate to the "gear" tab, select "add gear," and fill in the deets.</p>
+            <h5>Step 2: Log Jumps</h5>
+            <p>Once your gear is squared away, it's time to log your jumps. Click on the "log a jump" button and enter all of the usual logbook stuff. Don't forget to add a photo of your jump so you can remember how cool you are. Plus nobody on Tinder cares that you skydive, so just post it here instead.</p>
+            <h5>Step 3: Keep Track of Jumps and Gear</h5>
+            <p>Don't let your gear go rogue! Paralog will help you keep track of important dates such as reserve repacks and AAD services. Plus logging your gear with each jump will help you know when it's time for a reline and keep up with your canopy's value. </p>
+            <p>By following these simple steps, you can log your jumps like a pro AND stay on top of gear maintenance. And remember, always consult with your instructor or rigging professional if you have any concerns about your gear. Blue skies!</p>
+        </div>
+
+        <div>
+            <h6 class="docs-header">Get started with Paralog</h6>
+            <a href="/rigs/new" class="button">Add gear</a>
+            <a href="/jumps/new" class="button">Log a jump</a>
+        </div>
+
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>
+
