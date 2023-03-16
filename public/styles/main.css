@@ -76,6 +76,15 @@ img {
     justify-content: space-around;   
 }
 
+.index-img {
+    width: 100%;
+
+}
+
+.img-box {
+    overflow: hidden;
+}
+
 /* nav styles */
 
 .dropdown-btn {

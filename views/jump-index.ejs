@@ -17,10 +17,15 @@
                 <% jumps.sort((a, b) => a.jumpNo - b.jumpNo); %>
                 <% for (let jump of jumps) { %>
                 <li>
-                    <div class="card">
-                        <h5 class="card-header"> JUMP: <%= jump.jumpNo %> </h5>
-                        <h6 class="docs-header"> <%= jump.date.toLocaleDateString() %> | <%= jump.place %> </h6>
-                        <a href="/jumps/<%= jump._id %>" class="button">View Details</a>
+                    <div class="card row">
+                        <div class="four columns img-box">
+                            <img src="<%= jump.image %>" alt="jump photo" class="index-img">
+                        </div>
+                        <div class="eight columns">
+                            <h5 class="card-header"> JUMP: <%= jump.jumpNo %> </h5>
+                            <h6 class="docs-header"> <%= jump.date.toLocaleDateString() %> | <%= jump.place %> </h6>
+                            <a href="/jumps/<%= jump._id %>" class="button">View Details</a>
+                        </div>
                     </div>
                 </li>
                 <% } %>
