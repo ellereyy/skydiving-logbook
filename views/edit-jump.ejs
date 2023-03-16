@@ -24,10 +24,14 @@
           
             <label for="aircraft">Aircraft:</label>
             <input type="text" id="aircraft" name="aircraft" value="<%= jump.aircraft %>" required>
-          
-            <label for="equipment">Equipment:</label>
-            <input type="text" id="equipment" name="equipment" value="<%= jump.equipment %>" required>
-          
+                
+            <label for="rig">Gear:</label>
+            <select id="rig" name="rig">
+                <% for (let rig of rigs) { %>
+                <option value="<%= rig._id %>"><%= rig.name %></option>
+                <% } %>
+            </select>
+            
             <label for="altitude">Altitude:</label>
             <input type="number" id="altitude" name="altitude" value="<%= jump.altitude %>" required>
           
@@ -39,11 +43,8 @@
           
             <label for="image">Image:</label>
             <input type="text" id="image" name="image" value="<%= jump.image %>">
-          
-            <label for="rig">Rig:</label>
-            <input type="text" id="rig" name="rig" value="<%= jump.rig %>">
-            <br>
-          
+            
+            <br> 
             <input type="submit" class="button" value="Submit">
           </form>
           

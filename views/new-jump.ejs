@@ -15,16 +15,16 @@
         <form method="post" action="/jumps">
             <label for="jumpNo">Jump Number:</label>
             <input type="number" id="jumpNo" name="jumpNo" min="0" required>
-          
+        
             <label for="date">Date:</label>
             <input type="date" id="date" name="date" required>
-          
+
             <label for="place">Place:</label>
             <input type="text" id="place" name="place" required>
-          
+            
             <label for="aircraft">Aircraft:</label>
             <input type="text" id="aircraft" name="aircraft" required>
-          
+
             <label for="rig">Gear:</label>
             <select id="rig" name="rig">
                 <% for (let rig of rigs) { %>

@@ -52,18 +52,30 @@ router.get('/:id', function (req, res) {
                 .then(rig => {res.render('jump-details', {
                     jump: jump,
                     rig: rig
-                })})
+                })
+            })
         })
 })
 
 
 // EDIT / GET / READ / edit-jump.ejs / user can edit jump info 
 router.get('/:id/edit', (req, res) => {
+    // find the jump document by ID using URL parameter
     db.Jump.findById(req.params.id)
-        .then(jump => res.render('edit-jump', {
-            jump: jump
-        }))
-})
+        .then(jump => {
+            // use the jump document's rig property to query the rig 
+            db.Rig.find({})
+                .then(rigs => {
+                    // render the edit page with jump and rigs documents
+                    res.render('edit-jump', {
+                        jump: jump,
+                        rigs: rigs
+                    });
+                });
+        })
+});
+
+
 
 // UPDATE / PUT / UPDATE / edits jump document using form data & redirects user to show page
 router.put('/:id', (req, res) => {
