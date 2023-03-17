@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <%- include('./partials/head.ejs', {title: '404 | Paralog'}) %>
+    <!-- <link rel="stylesheet" href="/styles/home.css"> -->
+</head>
+
+<body>
+    <%- include('./partials/nav.ejs') %>
+
+    <main class="container not-found about">
+        <h2>Page Not Found</h2>
+        <p>Uh oh, looks like you've landed off. You might want to work on your spotting next time.</p>
+        <img src="/assets/default.jpg" alt="404" class="error-img">
+        <br>
+        <br>
+        <a href="/" class="button">Return to homepage</a>
+    </main>
+
+    <%- include('./partials/footer.ejs') %>
+</body>
+
+</html>

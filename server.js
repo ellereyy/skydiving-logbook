@@ -90,6 +90,12 @@ app.use('/jumps', jumpsCtrl)
 app.use('/rigs', rigsCtrl)
 
 
+/* 404 page
+--------------------------------------------------------------- */
+app.get('*', function (req, res) {
+    res.render('404')
+});
+
 /* Tell the app to listen on the specified port
 --------------------------------------------------------------- */
 app.listen(process.env.PORT, function () {
