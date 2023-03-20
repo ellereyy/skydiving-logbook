@@ -13,38 +13,38 @@
 
         <form method="post" action="/jumps/<%= jump._id %>?_method=PUT">
             <label for="jumpNo">Jump Number:</label>
-            <input type="number" id="jumpNo" name="jumpNo" value="<%= jump.jumpNo %>" required>
+            <input type="number" id="jumpNo" name="jumpNo" value="<%= jump.jumpNo %>" required class="u-full-width">
           
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" value="<%= jump.date.toISOString().substr(0,10) %>" required>
+            <input type="date" id="date" name="date" value="<%= jump.date.toISOString().substr(0,10) %>" required class="u-full-width">
           
             <label for="place">Place:</label>
-            <input type="text" id="place" name="place" value="<%= jump.place %>" required>
+            <input type="text" id="place" name="place" value="<%= jump.place %>" required class="u-full-width">
           
             <label for="aircraft">Aircraft:</label>
-            <input type="text" id="aircraft" name="aircraft" value="<%= jump.aircraft %>" required>
+            <input type="text" id="aircraft" name="aircraft" value="<%= jump.aircraft %>" required class="u-full-width">
                 
             <label for="rig">Gear:</label>
-            <select id="rig" name="rig">
+            <select id="rig" name="rig" class="u-full-width">
                 <% for (let rig of rigs) { %>
                 <option value="<%= rig._id %>"><%= rig.name %></option>
                 <% } %>
             </select>
             
-            <label for="altitude">Altitude:</label>
-            <input type="number" id="altitude" name="altitude" value="<%= jump.altitude %>" required>
+            <label for="altitude">Altitude(ft):</label>
+            <input class="u-full-width" type="number" id="altitude" name="altitude" value="<%= jump.altitude %>" required >
           
-            <label for="freeFallTime">Free Fall Time:</label>
-            <input type="number" id="freeFallTime" name="freeFallTime" value="<%= jump.freeFallTime %>">
+            <label for="freeFallTime">Free Fall Time(s):</label>
+            <input class="u-full-width" type="number" id="freeFallTime" name="freeFallTime" value="<%= jump.freeFallTime %>">
           
             <label for="description">Description:</label>
-            <textarea id="description" name="description"><%= jump.description %></textarea>
+            <textarea class="u-full-width" id="description" name="description"><%= jump.description %></textarea>
           
             <label for="image">Image:</label>
-            <input type="text" id="image" name="image" value="<%= jump.image %>">
+            <input class="u-full-width" type="text" id="image" name="image" value="<%= jump.image %>">
             
             <br> 
-            <input type="submit" class="button" value="Submit">
+            <input class="u-full-width" type="submit" class="button" value="Submit">
           </form>
           
     </main>

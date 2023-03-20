@@ -13,7 +13,7 @@
         <section class="card about">
             <section> 
                 <% if (rig.image) { %>
-                <img src="<%= rig.image %>" alt="jump photo">
+                <img src="<%= rig.image %>" alt="rig photo" class="show-img">
                 <% } else { %>
                 <img src="https://media.istockphoto.com/id/673781000/photo/skydiving-rig.jpg?s=612x612&w=0&k=20&c=vnqa7o6cb2mIuX-FIX5CzPONwkNUM04i46SFqbJ1l88=" alt="default rig photo" class="no-img">
                 <% } %>
@@ -22,19 +22,19 @@
             <section>
                 <h5 class="card-header"> Name: <%= rig.name %></h5>
                 <section>
-                    <p>Container: <%= rig.container %></p>
-                    <p>Main: <%= rig.main %></p>
-                    <p>Reserve: <%= rig.reserve %></p>
-                    <p>AAD: <%= rig.aad %></p>
+                    <p><span class="docs-header">Container: </span> <%= rig.container %></p>
+                    <p><span class="docs-header">Main: </span> <%= rig.main %></p>
+                    <p><span class="docs-header">Reserve: </span> <%= rig.reserve %></p>
+                    <p><span class="docs-header">AAD: </span> <%= rig.aad %></p>
                     <% if (rig.reserveRepackDue) { %>
-                        <p>Reserve Repack Due: <%= rig.reserveRepackDue.toLocaleDateString() %> </p>
+                        <p><span class="docs-header">Reserve Repack Due: </span> <%= rig.reserveRepackDue.toLocaleDateString() %> </p>
                         <% } else { %>
-                        <p>Reserve Repack Due: <span class="missing">data not available</span></p>
+                        <p class="missing">Reserve repack data unavailable</p>
                         <% } %>
                     <% if (rig.aadServiceDue) { %>
-                        <p>AAD Service Due: <%= rig.aadServiceDue.toLocaleDateString() %> </p>
+                        <p><span class="docs-header">AAD Service Due: </span> <%= rig.aadServiceDue.toLocaleDateString() %> </p>
                         <% } else { %>
-                        <p>AAD Service Due: <span class="missing">data not available</span></p>
+                        <p></p>
                         <% } %>
                 </section>
             </section>

@@ -13,36 +13,36 @@
         <h2>Log a Jump:</h2>
 
         <form method="post" action="/jumps">
-            <label for="jumpNo">Jump Number:</label>
-            <input type="number" id="jumpNo" name="jumpNo" min="0" required>
+            <label for="jumpNo" class="u-full-width">Jump Number:</label>
+            <input type="number" id="jumpNo" name="jumpNo" min="0" required class="u-full-width">
         
             <label for="date">Date:</label>
-            <input type="date" id="date" name="date" required>
+            <input type="date" id="date" name="date" required class="u-full-width">
 
             <label for="place">Place:</label>
-            <input type="text" id="place" name="place" required>
+            <input type="text" id="place" name="place" required class="u-full-width">
             
             <label for="aircraft">Aircraft:</label>
-            <input type="text" id="aircraft" name="aircraft" required>
+            <input type="text" id="aircraft" name="aircraft" required class="u-full-width">
 
-            <label for="rig">Gear:</label>
-            <select id="rig" name="rig">
+            <label for="rig">Gear: <span class="missing">*</span> </label> 
+            <select id="rig" name="rig" class="u-full-width">
                 <% for (let rig of rigs) { %>
                 <option value="<%= rig._id %>"><%= rig.name %></option>
                 <% } %>
             </select>
           
-            <label for="altitude">Altitude:</label>
-            <input type="number" id="altitude" name="altitude" min="2500" value="13500" required>
+            <label for="altitude">Altitude (ft):</label>
+            <input type="number" id="altitude" name="altitude" min="2500" value="13500" required class="u-full-width">
           
-            <label for="freeFallTime">Free Fall Time:</label>
-            <input type="number" id="freeFallTime" name="freeFallTime">
+            <label for="freeFallTime">Free Fall Time(s):</label>
+            <input type="number" id="freeFallTime" name="freeFallTime" class="u-full-width">
           
             <label for="description">Description:</label>
-            <textarea id="description" name="description"></textarea>
+            <textarea id="description" name="description" class="u-full-width"></textarea>
           
             <label for="image">Image (URL):</label>
-            <input type="text" id="image" name="image">
+            <input type="text" id="image" name="image" class="u-full-width">
             <br>
 
             <!-- <label for="image">Image (file):</label>
@@ -50,6 +50,8 @@
 
             <input type="submit" class="button" value="Submit">
           </form>
+
+          <small class="missing">*at least one rig must be logged before a jump can be logged</small>
 
     </main>
 
