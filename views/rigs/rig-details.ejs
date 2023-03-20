@@ -27,12 +27,12 @@
                     <p>Reserve: <%= rig.reserve %></p>
                     <p>AAD: <%= rig.aad %></p>
                     <% if (rig.reserveRepackDue) { %>
-                        <p>Reserve Repack Due: <%= rig.reserveRepackDue %> </p>
+                        <p>Reserve Repack Due: <%= rig.reserveRepackDue.toLocaleDateString() %> </p>
                         <% } else { %>
                         <p>Reserve Repack Due: <span class="missing">data not available</span></p>
                         <% } %>
                     <% if (rig.aadServiceDue) { %>
-                        <p>AAD Service Due: <%= rig.aadServiceDue %> </p>
+                        <p>AAD Service Due: <%= rig.aadServiceDue.toLocaleDateString() %> </p>
                         <% } else { %>
                         <p>AAD Service Due: <span class="missing">data not available</span></p>
                         <% } %>

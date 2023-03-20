@@ -76,7 +76,6 @@ router.get('/:id/edit', (req, res) => {
 });
 
 
-
 // UPDATE / PUT / UPDATE / edits jump document using form data & redirects user to show page
 router.put('/:id', (req, res) => {
     db.Jump.findByIdAndUpdate(
@@ -92,6 +91,7 @@ router.delete('/:id', (req, res) => {
     db.Jump.findByIdAndRemove(req.params.id)
         .then(() => res.redirect('/jumps'))
 })
+
 
 /* Export these routes so that they are accessible in `server.js`
 --------------------------------------------------------------- */
